@@ -38,21 +38,15 @@
             "default": "1"
         },
 
-        // Azure CLI
+        // Features
         "addFeatureAzureCLI": {
             "type": "boolean",
             "description": "+ Feature: Azure CLI",
             "default": true
         },
-        "azureCLIInstallBicep": {
-            "type": "boolean",
-            "description": "+ Feature: Add Azure CLI - Install Bicep",
-            "default": true
-        },
-
         "addFeatureCLIforM365": {
             "type": "boolean",
-            "description": "+ Feature: Add PnP CLI for Microsoft 365",
+            "description": "+ Feature: PnP CLI for Microsoft 365",
             "default": false
         },
 
@@ -72,10 +66,7 @@
         "ghcr.io/devcontainers/features/azure-cli:1": {
             "if": "options.addFeatureAzureCLI",
             "version": "latest",
-            "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh",
-            "options": {
-                "installBicep": "options.azureCLIInstallOption"
-            }
+            "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh"
         },
         "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
             "if": "options.addFeatureCLIforM365",
