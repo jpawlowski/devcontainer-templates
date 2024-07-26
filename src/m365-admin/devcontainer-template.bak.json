@@ -34,6 +34,31 @@
       ],
       "description": "Configure PowerShell: Opt-out of PowerShell Telemetry data collection.",
       "default": "1"
+    },
+    "addFeatureAzureCLI": {
+      "type": "boolean",
+      "description": "+ Feature: Azure CLI",
+      "default": true
+    },
+    "addFeatureGitHubCLI": {
+      "type": "boolean",
+      "description": "+ Feature: GitHub CLI",
+      "default": true
+    },
+    "addFeaturePnPCLIforM365": {
+      "type": "boolean",
+      "description": "+ Feature: PnP CLI for Microsoft 365",
+      "default": false
+    },
+    "addFeaturePnPPowerShell": {
+      "type": "boolean",
+      "description": "+ Feature: PnP.PowerShell",
+      "default": false
+    },
+    "addFeatureTerraformCLI": {
+      "type": "boolean",
+      "description": "+ Feature: Terraform CLI",
+      "default": false
     }
   },
   "platforms": [

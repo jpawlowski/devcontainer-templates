@@ -3,7 +3,24 @@
 	"image": "ghcr.io/jpawlowski/devcontainers/m365-admin:${templateOption:imageVersion}",
 
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
-	// "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest",
+      "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
+      "version": "latest"
+    },
+    "ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/Terraform:1": {
+      "version": "latest"
+    }
+  },
 
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -23,7 +40,7 @@
 			  "window.zoomLevel": 0,
 			  "workbench.iconTheme": "vscode-icons"
 			}
-		}	  
+		}
 	},
 
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
