@@ -3,12 +3,8 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "github.vscode-github-actions",
-    "lizebang.bash-extension-pack",
     "DavidAnson.vscode-markdownlint",
     "github.vscode-github-actions",
-    "lizebang.bash-extension-pack",
-    "ms-python.python",
-    "ms-python.vscode-pylance",
     "ms-vscode-remote.remote-containers"
   ]
 }
