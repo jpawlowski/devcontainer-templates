@@ -1,0 +1,106 @@
+{
+    "id": "m365-admin",
+    "version": "1.0.0",
+    "name": "🧑‍💼 Admincontainer for Microsoft 365",
+    "description": "A Template for Microsoft 365 Admins to manage their Microsoft 365 and Azure environment. The template is based on a pre-build container image with the necessary tools and extensions. Bootstrap your environment with a single click and in no time. Complementary features can be selected during the setup.",
+    "documentationURL": "https://github.com/jpawlowski/devcontainer-templates/tree/main/src/m365-admin",
+    "licenseURL": "https://github.com/jpawlowski/devcontainer-templates/blob/main/LICENSE.txt",
+    "publisher": "Julian Pawlowski",
+    "options": {
+        "imageVersion": {
+            "type": "string",
+            "description": "Image version:",
+            "proposals": [
+                "latest",
+                "1"
+            ],
+            "default": "1"
+        },
+
+        // PowerShell
+        "powerShellUpdatecheck": {
+            "type": "string",
+            "enum": [
+                "Off",
+                "Default",
+                "LTS"
+            ],
+            "description": "Configure PowerShell: Notify on startup that a new version has been released.",
+            "default": "LTS"
+        },
+        "powerShellTelemetryOptOut": {
+            "type": "string",
+            "enum": [
+                "0",
+                "1"
+            ],
+            "description": "Configure PowerShell: Opt-out of PowerShell Telemetry data collection.",
+            "default": "1"
+        },
+
+        // Azure CLI
+        "addFeatureAzureCLI": {
+            "type": "boolean",
+            "description": "+ Feature: Azure CLI",
+            "default": true
+        },
+        "azureCLIInstallBicep": {
+            "type": "boolean",
+            "description": "+ Feature: Add Azure CLI - Install Bicep",
+            "default": true
+        },
+
+        "addFeatureCLIforM365": {
+            "type": "boolean",
+            "description": "+ Feature: Add PnP CLI for Microsoft 365",
+            "default": false
+        },
+
+        "addFeatureGitHubCLI": {
+            "type": "boolean",
+            "description": "+ Feature: GitHub CLI",
+            "default": true
+        },
+
+        "addFeaturePnPPowerShell": {
+            "type": "boolean",
+            "description": "+ Feature: PnP.PowerShell",
+            "default": false
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "if": "options.addFeatureAzureCLI",
+            "version": "latest",
+            "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh",
+            "options": {
+                "installBicep": "options.azureCLIInstallOption"
+            }
+        },
+        "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
+            "if": "options.addFeatureCLIforM365",
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "if": "options.addFeatureGitHubCLI",
+            "version": "latest"
+        },
+        "ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
+            "if": "options.addFeaturePnPPowerShell",
+            "version": "latest"
+        }
+    },
+    "platforms": [
+        "Azure",
+        "Microsoft 365",
+        "PowerShell"
+    ],
+    "keywords": [
+        "intune",
+        "sharepoint",
+        "microsoft-entra",
+        "microsoft-graph",
+        "microsoft-teams",
+        "office-365"
+    ]
+}

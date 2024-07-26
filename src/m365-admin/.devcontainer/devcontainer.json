@@ -1,0 +1,46 @@
+{
+	"name": "🧑‍💼 M365 Admin",
+	"image": "ghcr.io/jpawlowski/devcontainers/m365-admin:${templateOption:imageVersion}",
+
+	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+	// "features": {},
+
+	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// 👇 Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "",
+
+	// 👇 Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+			  "debug.openDebug": "neverOpen",
+			  "editor.formatOnType": true,
+			  "editor.formatOnPaste": true,
+			  "editor.mouseWheelZoom": true,
+			  "editor.tabCompletion": "on",
+			  "files.defaultLanguage": "powershell",
+			  "powershell.integratedConsole.focusConsoleOnExecute": false,
+			  "powershell.integratedConsole.showOnStartup": false,
+			  "terminal.integrated.defaultProfile.linux": "pwsh",
+			  "window.zoomLevel": 0,
+			  "workbench.iconTheme": "vscode-icons"
+			}
+		}	  
+	},
+
+	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	// 👇 Set environment variables that should apply to the entire container
+	"containerEnv": {
+		"POWERSHELL_UPDATECHECK": "${templateOption:powerShellUpdatecheck}",
+		"POWERSHELL_TELEMETRY_OPTOUT": "${templateOption:powerShellTelemetryOptOut}"
+	}
+
+	// 👇 Set environment variables for VS Code and related sub-processes (terminals, tasks, debugging, etc.)
+	// "remoteEnv": {
+	//     "PATH": "${containerEnv:PATH}:/some/other/path"
+	// }
+}
