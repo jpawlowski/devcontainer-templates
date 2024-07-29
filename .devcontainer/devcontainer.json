@@ -24,10 +24,8 @@
 				"github.vscode-github-actions",
 				"lizebang.bash-extension-pack",
 				"DavidAnson.vscode-markdownlint",
-				"github.vscode-github-actions",
 				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"ms-vscode-remote.remote-containers"
+				"ms-python.vscode-pylance"
 			]
 		}
 	},

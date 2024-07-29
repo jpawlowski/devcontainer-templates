@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd $(dirname "$0")
+cd "$(dirname "$0")" || exit 1
+
+# shellcheck source=/dev/null
 source test-utils.sh
 
 # Template specific tests

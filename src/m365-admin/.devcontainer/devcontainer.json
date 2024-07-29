@@ -20,20 +20,15 @@
     // "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:1": {
     //   "repositories": "",
     //   "resources": ""
-    // },
+    // }
 
     // 👇 Uncomment to add PnP CLI for Microsoft 365 to the container
     // "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
     //   "version": "latest"
-    // },
+    // }
 
     // 👇 Uncomment to add PnP.PowerShell to the container
     // "ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
-    //   "version": "latest"
-    // },
-
-    // 👇 Uncomment to add Terraform to the container
-    // "ghcr.io/devcontainers/features/Terraform:1": {
     //   "version": "latest"
     // }
   },
@@ -44,9 +39,9 @@
 	// 👇 Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "",
 
-	// 👇 Configure tool-specific properties.
 	"customizations": {
-		"vscode": {
+    // 👇 Configure VS Code specific properties.
+    "vscode": {
 			"settings": {
 			  "debug.openDebug": "neverOpen",
 			  "editor.formatOnType": true,
@@ -55,7 +50,13 @@
 			  "editor.tabCompletion": "on",
 			  "window.zoomLevel": 0,
 			  "workbench.iconTheme": "vscode-icons"
-			}
+			},
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "lizebang.bash-extension-pack",
+        "ms-vscode.azurecli"
+      ]
 		}
 	},
 
