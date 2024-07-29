@@ -1,7 +1,7 @@
 #!/bin/bash
 TEMPLATE_ID="$1"
 
-set -ex
+set -e
 
 shopt -s dotglob
 

@@ -1,25 +1,41 @@
+// More info about devcontainer.json: https://containers.dev/implementors/json_reference/
 {
 	"name": "🧑‍💼 M365 Admin",
-	"image": "ghcr.io/jpawlowski/devcontainers/m365-admin:${templateOption:imageVersion}",
+	"image": "ghcr.io/workoho/devcontainers/m365-admin:${templateOption:imageVersion}",
+  // 👆 This pre-built image includes PowerShell and common PowerShell modules already.
 
-	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+	// 👇 Additional Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
   "features": {
+    // Azure CLI with some extensions
     "ghcr.io/devcontainers/features/azure-cli:1": {
       "version": "latest",
-      "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh"
+      "extensions": "account, automation, azure-devops, functionapp, log-analytics, resource-graph, ssh",
+      "installBicep": true
     },
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
-    },
-    "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
-      "version": "latest"
-    },
-    "ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/Terraform:1": {
-      "version": "latest"
     }
+
+    // 👇 Uncomment to install additional PowerShell modules and scripts to the container
+    // "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:1": {
+    //   "repositories": "",
+    //   "resources": ""
+    // },
+
+    // 👇 Uncomment to add PnP CLI for Microsoft 365 to the container
+    // "ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
+    //   "version": "latest"
+    // },
+
+    // 👇 Uncomment to add PnP.PowerShell to the container
+    // "ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
+    //   "version": "latest"
+    // },
+
+    // 👇 Uncomment to add Terraform to the container
+    // "ghcr.io/devcontainers/features/Terraform:1": {
+    //   "version": "latest"
+    // }
   },
 
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.

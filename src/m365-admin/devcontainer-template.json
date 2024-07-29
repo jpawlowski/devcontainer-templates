@@ -9,12 +9,12 @@
   "options": {
     "imageVersion": {
       "type": "string",
-      "description": "Image version:",
+      "description": "Select or enter the image version:",
       "proposals": [
         "latest",
-        "1"
+        "v1"
       ],
-      "default": "1"
+      "default": "latest"
     },
     "powerShellUpdatecheck": {
       "type": "string",
