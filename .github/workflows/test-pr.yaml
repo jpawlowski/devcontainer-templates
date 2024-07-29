@@ -13,6 +13,8 @@ jobs:
         with:
           filters: |
             m365-admin: ./**/m365-admin/**
+            m365-dev: ./**/m365-dev/**
+            m365-ultimate: ./**/m365-ultimate/**
 
   test:
     needs: [detect-changes]
